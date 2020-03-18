@@ -236,7 +236,7 @@
                     }
                 }
              
-                xhr.open('get', 'http://127.0.0.1:3000/show_sensor/1', true);
+                xhr.open('get', 'https://uji-pertama.herokuapp.com/show_sensor/1', true);
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
                 xhr.send();
             }
@@ -255,7 +255,7 @@
                         location.reload(); 
                     }
                 }
-                xhr.open('get', 'http://127.0.0.1:3000/show_sensor/2', true);
+                xhr.open('get', 'https://uji-pertama.herokuapp.com/show_sensor/2', true);
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
                 xhr.send();
             }
@@ -274,7 +274,7 @@
                         location.reload(); 
                     }
                 }
-                xhr.open('get', 'http://127.0.0.1:3000/show_sensor/3', true);
+                xhr.open('get', 'https://uji-pertama.herokuapp.com/show_sensor/3', true);
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
                 xhr.send();
             }
@@ -466,7 +466,7 @@ var xhttp_maps = new XMLHttpRequest();
                     console.log(lat);
                   }
                 };
-                xhttp_maps.open('get', 'http://127.0.0.1:3000/show_maps', true);
+                xhttp_maps.open('get', 'https://uji-pertama.herokuapp.com/show_maps', true);
                 xhttp_maps.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
                 xhttp_maps.open("GET", "/maps.json", false);
                 xhttp_maps.send();
