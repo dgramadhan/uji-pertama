@@ -2,7 +2,7 @@
 'use strict';
 
 var response = require('./res');
-var connection = require('./koneksi');
+// var connection = require('./koneksi');
 
 
 //tambahan
