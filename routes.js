@@ -3,8 +3,8 @@
 module.exports = function(app) {
     var todoList = require('./controller');
 
-    app.route('/')
-        .get(todoList.index);
+//     app.route('/')
+//         .get(todoList.index);
 
     app.route('/sensor/:id_sensor/:value_sensor')
         .get(todoList.sensor);
@@ -29,6 +29,10 @@ module.exports = function(app) {
     //tambah home
       
     app.route ('/home')
+        .get(todoList.home);
+    
+    
+    app.route('/')
         .get(todoList.home);
 
 
