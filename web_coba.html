@@ -134,7 +134,7 @@
 <div id="portfolio" class="container-fluid text-center bg-grey">
   <h2>STATISTICS</h2><br>
   <h4>Statistik Pembacaan Sensor</h4>
-  <div class="row text-center slideanim">
+  <div class="row text-center">
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <canvas id="myChart" width="100" height="70"></canvas>
@@ -429,7 +429,7 @@
 
 <script>
 
-var mymap = L.map('map').setView([-6.9218999,107.6192314], 16);
+var mymap = L.map('map').setView([-6.9218999,107.6192314], 10);
 
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(mymap);
 // function build_maps(lat, longi) {
@@ -437,9 +437,9 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenSt
 //   console.log(longi);
   
 // }
-var myDataPoint = L.marker([-6.9218999,107.6192314]).addTo(mymap)
-                  .bindPopup('Disini Banjir Jadi Pilih Jalan lainnya yaa')
-                  .openPopup(); 
+// var myDataPoint = L.marker([-6.9218999,107.6192314]).addTo(mymap)
+//                   .bindPopup('Disini Banjir Jadi Pilih Jalan lainnya yaa')
+//                   .openPopup(); 
 //tambahan
 var xhttp_maps = new XMLHttpRequest();
                     xhttp_maps.onreadystatechange = function() {
@@ -461,9 +461,16 @@ var xhttp_maps = new XMLHttpRequest();
                         
                     });
 
-                    // var myDataPoint = L.marker([lat, longi]).addTo(mymap);
-                    // build_maps(lat, longi);
-                    console.log(lat);
+                   console.log(lat, longi);
+
+                  var i = 0;
+                  while (i < lat.length) {     
+                    var myDataPoint = L.marker([lat[i],longi[i]]).addTo(mymap)
+                    .bindPopup('Disini Banjir Jadi Pilih Jalan lainnya yaa')
+                    .openPopup();
+                  i++;
+                  }
+                          
                   }
                 };
                 xhttp_maps.open('get', 'https://uji-pertama.herokuapp.com/show_maps', true);
