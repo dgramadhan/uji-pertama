@@ -189,7 +189,9 @@
                     });
 
                     console.log(values);
-                    
+                          
+                    var tampil;
+                          
                     function compare() {  
                     // first item of the array 
                     let f=values[0];  
@@ -201,9 +203,11 @@
 
                     if (l>=300) {
                       document.write("<br>Banjir"); 
+                      window.tampil = "banjir";
                       }
                     else if (l<300){
                       document.write("<br>Tidak Banjir"); 
+                      window.tampil = "tidak banjir";
                     }
 
 
@@ -465,13 +469,13 @@ var xhttp_maps = new XMLHttpRequest();
                   //start-tambahan untuk pop up maps  
                   var i = 0;
                   var banjir = 6; //harusnya generate dari nilai value sensor
-                  var tampil;
+//                   var tampil;
                           
                   while (i < lat.length) {     
                     if (banjir > 4) { 
-                      tampil = 'tidak banjir'; 
+//                       tampil = 'tidak banjir'; 
                     var myDataPoint = L.marker([lat[i],longi[i]]).addTo(mymap)
-                    .bindPopup(lat[i] + ' , ' + longi[i] + '<br><b> BANJIR </b>' + tampil)
+                    .bindPopup(lat[i] + ' , ' + longi[i] + '<br><b>' + window.tampil + '</b>')
                    .openPopup();
                     
                     }
