@@ -462,15 +462,23 @@ var xhttp_maps = new XMLHttpRequest();
                     });
 
                    console.log(lat, longi);
-
+                  //start-tambahan untuk pop up maps  
                   var i = 0;
+                  var banjir = 6; //harusnya generate dari nilai value sensor
+                  var tampil;
+                          
                   while (i < lat.length) {     
+                    if (banjir > 4) { 
+                      tampil = 'tidak banjir'; 
                     var myDataPoint = L.marker([lat[i],longi[i]]).addTo(mymap)
-                    .bindPopup('Disini Banjir Jadi Pilih Jalan lainnya yaa')
-                    .openPopup();
+                    .bindPopup(lat[i] + ' , ' + longi[i] + '<br><b> BANJIR </b>' + tampil)
+                   .openPopup();
+                    
+                    }
+                    
                   i++;
                   }
-                          
+                  //end-tambahan untuk pop up maps      
                   }
                 };
                 xhttp_maps.open('get', 'https://uji-pertama.herokuapp.com/show_maps', true);
