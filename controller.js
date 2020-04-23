@@ -125,3 +125,26 @@ exports.home = function(req, res) {
     var path = require('path');
     res.sendFile(path.join(__dirname, 'web_coba.html'));
 };
+
+//tambahan telegram
+
+exports.post_add_telegram = function(req, res) {
+    connection.query('INSERT INTO telegram (id_telegram) VALUES (?)', [req.body.id_telegram], function (error, rows, fields){
+        if(error){
+            console.log(error)
+        } 
+            response.db_true_telegram(rows, res)
+            
+    });
+};
+
+exports.show_telegram = function(req, res) {
+    
+    connection.query('SELECT * FROM telegram', function (error, rows, fields){
+        if(error){
+            console.log(error)
+        } else if(rows.length > 0){
+            response.true_telegram(rows, res);
+        }
+    });
+};
