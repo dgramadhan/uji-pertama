@@ -37,6 +37,14 @@ module.exports = function(app) {
 
 
      //tambah home -
+    
+     //tambah telegram
+     app.route('/add_telegram')
+        .post(todoList.post_add_telegram);
+
+    app.route('/show_telegram')
+        .get(todoList.show_telegram);
+        
         
 
 };
