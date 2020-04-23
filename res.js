@@ -71,3 +71,28 @@ exports.false_maps = function(values, res) {
 };
 
 //sampai sini
+
+//tambah telegram
+exports.true_telegram = function(values, res) {
+  var data = {
+      'status': 1,
+      'values': values
+  };
+  fs.writeFile(path.join(__dirname, '/json','telegram.json'), [JSON.stringify(values)], err => {
+    if (err) throw err;
+    console.log('File Written to telegram');
+
+    })
+  res.json(data);
+  res.end();
+};
+
+
+exports.db_true_telegram = function(values, res) {
+  var data = {
+      'status': 1,
+      'values': values.affectedRows
+  };
+  res.json(data);
+  res.end();
+};
