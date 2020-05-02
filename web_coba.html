@@ -449,7 +449,7 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenSt
 
     function onLocationFound(e) {
         // var radius = e.accuracy / 2;
-        var radius = e.accuracy / 1000;
+        var radius = e.accuracy / 100;
 
         L.marker(e.latlng).addTo(mymap)
             .bindPopup("You are within " + radius + " meters from this point" + "<br><b>Anda Ada Disini <br>" /*+ e.latlng */).openPopup();
