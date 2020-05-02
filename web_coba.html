@@ -435,10 +435,7 @@
 
 var mymap = L.map('map').setView([-6.9218999,107.6192314], 10);
 
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap',
-   maxZoom: 18,
-   tileSize: 512,
-   zoomOffset: -1 }).addTo(mymap);
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap'}).addTo(mymap);
 
 
  //geolocation
@@ -452,7 +449,7 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenSt
 
     function onLocationFound(e) {
         // var radius = e.accuracy / 2;
-        var radius = e.accuracy / 10;
+        var radius = e.accuracy / 1000;
 
         L.marker(e.latlng).addTo(mymap)
             .bindPopup("You are within " + radius + " meters from this point" + "<br><b>Anda Ada Disini <br>" /*+ e.latlng */).openPopup();
