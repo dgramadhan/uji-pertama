@@ -93,6 +93,9 @@ exports.db_true_telegram = function(values, res) {
       'status': 1,
       'values': values.affectedRows
   };
-  res.json(data);
+  //tambahan 23-4-20
+  res.redirect('/home');
+  console.log(data);
+  // res.json(data);
   res.end();
 };
