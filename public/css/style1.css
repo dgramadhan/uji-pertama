@@ -18,7 +18,7 @@
     margin-bottom: 30px;
   }  
   .jumbotron {
-    background-color: #6666ff;
+    background-color: #349eeb/*#6666ff*/;
     color: #fff;
     padding: 100px 25px;
     font-family: Montserrat, sans-serif;
@@ -30,11 +30,11 @@
     background-color: #f6f6f6;
   }
   .logo-small {
-    color: #668cff;
+    color: #349eeb/*#6666ff*/;
     font-size: 50px;
   }
   .logo {
-    color: #668cff;
+    color: #349eeb/*#6666ff*/;
     font-size: 200px;
   }
   .thumbnail {
@@ -107,7 +107,7 @@
   }
   .navbar {
     margin-bottom: 0;
-    background-color: #668cff;
+    background-color: #349eeb/*#6666ff*/;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
@@ -132,7 +132,7 @@
     margin-bottom: 20px;
     color: #f4511e;
   }
-  .slideanim {visibility:hidden;}
+  /* .slideanim {visibility:hidden;} */
   .slide {
     animation-name: slide;
     -webkit-animation-name: slide;
@@ -180,5 +180,5 @@
 
   #map {
   width : 100%;
-   height: 400px; 
+   height: 800px; 
   }
