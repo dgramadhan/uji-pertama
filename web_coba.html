@@ -435,15 +435,36 @@
 
 var mymap = L.map('map').setView([-6.9218999,107.6192314], 10);
 
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(mymap);
-// function build_maps(lat, longi) {
-//   var myDataPoint = L.marker([lat, longi]).addTo(mymap);
-//   console.log(longi);
-  
-// }
-// var myDataPoint = L.marker([-6.9218999,107.6192314]).addTo(mymap)
-//                   .bindPopup('Disini Banjir Jadi Pilih Jalan lainnya yaa')
-//                   .openPopup(); 
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap',
+   maxZoom: 18,
+   tileSize: 512,
+   zoomOffset: -1 }).addTo(mymap);
+
+
+ //geolocation
+      if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position){
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+      });
+      
+    mymap.locate({setView: true});
+
+    function onLocationFound(e) {
+        // var radius = e.accuracy / 2;
+        var radius = e.accuracy / 10;
+
+        L.marker(e.latlng).addTo(mymap)
+            .bindPopup("You are within " + radius + " meters from this point" + "<br><b>Anda Ada Disini <br>" /*+ e.latlng */).openPopup();
+
+        L.circle(e.latlng, radius).addTo(mymap);
+      }
+      mymap.on('locationfound', onLocationFound);
+    }else {
+      alert("Geolocation API is not supported in your browser. :(");
+    }
+
+
 //tambahan
 var xhttp_maps = new XMLHttpRequest();
                     xhttp_maps.onreadystatechange = function() {
