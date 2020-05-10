@@ -482,6 +482,14 @@ var xhttp_maps = new XMLHttpRequest();
 
                         
                     });
+                          
+                     // // Map json values back to values array
+                    var loc = json.map(function (a) {
+                        console.log(a);
+                        return (a.loc);
+
+                        
+                    });
 
                    console.log(lat, longi);
                   //start-tambahan untuk pop up maps  
@@ -493,7 +501,7 @@ var xhttp_maps = new XMLHttpRequest();
                     if (banjir > 4) { 
 //                       tampil = 'tidak banjir'; 
                     var myDataPoint = L.marker([lat[i],longi[i]]).addTo(mymap)
-                    .bindPopup(lat[i] + ' , ' + longi[i] + '<br><b>' + window.tampil + '</b>')
+                    .bindPopup(lat[i] + ' , ' + longi[i] + '<br><b> ' + window.tampil + '</b>' + '<br>'+  loc[i] )
                    .openPopup();
                     
                     }
@@ -505,7 +513,7 @@ var xhttp_maps = new XMLHttpRequest();
                 };
                 xhttp_maps.open('get', 'https://uji-pertama.herokuapp.com/show_maps', true);
                 xhttp_maps.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-                xhttp_maps.open("GET", "/maps.json", false);
+                xhttp_maps.open("GET", "/test_maps.json", false);
                 xhttp_maps.send();
 //sampai sini
 
