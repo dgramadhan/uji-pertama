@@ -148,3 +148,10 @@ exports.show_telegram = function(req, res) {
         }
     });
 };
+
+//Untuk export ke file geocoder
+exports.new_maps = function () {
+    var test1 = require('./exp_nomina');
+
+    test1.func();
+}
