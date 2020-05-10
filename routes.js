@@ -25,6 +25,9 @@ module.exports = function(app) {
 
     app.route('/show_maps')
         .get(todoList.show_maps);
+    
+    app.route('/new_maps')
+        .get(todoList.new_maps);
 
     //tambah home
       
